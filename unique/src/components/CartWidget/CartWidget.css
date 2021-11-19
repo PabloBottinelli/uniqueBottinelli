@@ -1,0 +1,10 @@
+img{
+    width: 45px;
+}
+.carrito span{
+    font-size: 0.8em;
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+    padding: 0px 6px;
+}
