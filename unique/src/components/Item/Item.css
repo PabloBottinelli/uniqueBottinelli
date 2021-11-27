@@ -1,0 +1,27 @@
+.item-ctn{
+    border: 1px solid gray;
+    border-radius: 20px;
+    text-align: left;
+}
+.item-ctn img{
+    width: 250px;
+    border-radius: 20px 20px 0 0;
+}
+.item-ctn h4{
+    padding: 15px;
+    font-size: 1.5em;
+    margin: 0;
+    width: 235px;
+}
+.item-ctn p{
+    padding-left: 15px;
+    font-size: 1em;
+    margin: 0;
+    width: 235px;
+}
+.item-ctn h5{
+    margin: 15px;
+    font-size: 1.2em;
+    width: 235px;
+    font-weight: 700;
+}
