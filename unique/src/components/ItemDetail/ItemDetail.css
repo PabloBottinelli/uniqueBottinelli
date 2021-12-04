@@ -1,0 +1,27 @@
+.itemDetail-ctn{
+    border: 1px solid rgb(199, 199, 199);
+    padding: 10px;
+    display: flex;
+    text-align: left;
+}
+.imagen img{
+    width: 400px;
+}
+.detalles{
+    margin-left: 20px;
+}
+.detalles h4{
+    font-size: 2.5em;
+    margin-bottom: 0;
+}
+.detalles p{
+    font-size: 1.3em;
+    margin-bottom: 0;
+}
+.detalles h5{
+    font-size: 2em;
+    margin-bottom: 0;
+}
+.detalles span{
+    font-size: 2em;
+}
