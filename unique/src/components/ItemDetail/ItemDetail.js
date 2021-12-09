@@ -1,16 +1,15 @@
 import './ItemDetail.css'
 
-const ItemDetail = ({id, name, description, precio, url, talle}) => {
+const ItemDetail = ({ product }) => {
     return (
-        <div key={id} className="itemDetail-ctn">
+        <div key={product.id} className="itemDetail-ctn">
             <div className='imagen'>
-                <img src={url}></img>
+                <img src={product.url}></img>
             </div>
             <div className='detalles'>
-                <h4>{name}</h4>
-                <p>{description}</p>
-                <h5>{precio}$</h5>
-                <span>Talle: {talle}</span>
+                <h4>{product.name}</h4>
+                <p>{product.description}</p>
+                <h5>{product.precio}$</h5>
             </div>
         </div>
     )

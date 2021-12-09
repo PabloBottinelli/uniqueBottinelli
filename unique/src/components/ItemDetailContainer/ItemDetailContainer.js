@@ -1,68 +1,35 @@
+import React from 'react'
+import { useState, useEffect } from 'react'
+import ItemDetail from '../ItemDetail/ItemDetail'
 import './ItemDetailContainer.css'
-import ItemDetail from '../ItemDetail/ItemDetail';
-import  { useState, useEffect } from 'react' 
+import { getProductById } from '../../products'
+import { useParams } from 'react-router-dom'
 
-const products = [
-    {
-        id:'1',
-        name:'Remera 1',
-        description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        precio: 150,
-        url: './assets/remera.jpg',
-        talle: 'M'
-      },
-      {
-        id:'2',
-        name:'Remera 2',
-        description:'Remera 2',
-        precio: 250,
-        url: './assets/remera.jpg'
-      },
-      {
-        id:'3',
-        name:'Remera 3',
-        description:'Remera 3',
-        precio: 350,
-        url: './assets/remera.jpg'
-      },
-      {
-        id:'4',
-        name:'Remera 4',
-        description:'Remera 4',
-        precio: 450,
-        url: './assets/remera.jpg'
-      },
-      {
-        id:'5',
-        name:'Remera 5',
-        description:'Remera 5',
-        precio: 550,
-        url: './assets/remera.jpg'
-      }
-]
-
-function getItem(){
-    return new Promise((resolve, reject) =>{
-        setTimeout(() => resolve(products[0]), 2000 )
-    })
-}
-  
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ()=> {
     const [product, setProduct] = useState([])
-  
+    const { paramId } = useParams()
+    console.log(paramId)
     useEffect(() => {
-      const producto = getItem()
-  
-      producto.then(response => {
-        setProduct(response)
-      })
-    }, [])
+        getProductById(paramId).then(item => {
+            setProduct(item)
+        }).catch(err  => {
+            console.log(err)
+        })
 
-    return(
-        <div className='detailContainer'>
-            <ItemDetail id={product.id}  name={product.name} description={product.description} precio={product.precio} url={product.url} talle={product.talle}/>
+        return (() => {
+            setProduct()
+        })
+
+    }, [paramId])
+
+
+    return (
+        <div className="ItemDetailContainer" >
+            <ItemDetail  product={product}/>
         </div>
-    )
+    )    
+    
 }
 
 export default ItemDetailContainer
+
