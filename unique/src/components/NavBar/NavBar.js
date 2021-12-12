@@ -5,12 +5,12 @@ import {Link} from 'react-router-dom';
 const NavBar = () => {
     return(
         <nav className='nav'>
-            <h1>UNIQUE</h1>
-            <a href='artesanias'>Artesanías</a>
-            <a href='joyas'>Joyas</a>
-            <a href='muebles'>Muebles</a>
-            <a href='3d'>3D</a>
-            <a href='otros'>Otros</a>
+            <Link to={`/`}><h1>UNIQUE</h1></Link>
+            <Link to={'/category/1'}>Artesanías</Link>
+            <Link to={'/category/2'}>Joyas</Link>
+            <Link to={'/category/3'}>Muebles</Link>
+            <Link to={'/category/4'}>3D</Link>
+            <Link to={'/category/5'}>Otros</Link>
             <CartWidget/>
         </nav>
     )

@@ -5,7 +5,7 @@ const products = [
       descriptionSimple:'Figura 3D',
       description: 'Figura Impresa en 3D del personaje de star wars Yoda',
       precio: 250,
-      url: './assets/3d1.jpg',
+      url: '../assets/3d1.jpg',
       categoryID: '4'
     },
     {
@@ -14,7 +14,7 @@ const products = [
       descriptionSimple:'Soporte 3D',
       description: 'Soporte para barbijos con forma de flecha, color rojo e impreso en 3D',
       precio: 200,
-      url: './assets/3D2.jpg',
+      url: '../assets/3D2.jpg',
       categoryID: '4'
     },
     {
@@ -23,7 +23,7 @@ const products = [
       descriptionSimple:'Balde 3D',
       description: 'Balde contenedor impreso en 3D color gris con detalles en rojo',
       precio: 300,
-      url: './assets/3D3.jpg',
+      url: '../assets/3D3.jpg',
       categoryID: '4'
     },
     {
@@ -32,7 +32,7 @@ const products = [
       descriptionSimple:'Muñecas artesanales',
       description: 'Muñecas mexicanas artesanales a pedido hechas a mano',
       precio: 250,
-      url: './assets/artesanias1.jpg',
+      url: '../assets/artesanias1.jpg',
       categoryID: '1'
     },
     {
@@ -41,7 +41,7 @@ const products = [
       descriptionSimple:'Pulseras Artesanales',
       description: 'Pulseras artesanales de colores a eleccion hechas a mano',
       precio: 100,
-      url: './assets/artesanias2.jpg',
+      url: '../assets/artesanias2.jpg',
       categoryID: '1'
     },
     {
@@ -50,7 +50,7 @@ const products = [
       descriptionSimple:'Maceta artesanal',
       description: 'Macetas artesanales de todo color y tamaño, pintadas a mano',
       precio: 200,
-      url: './assets/artesanias3.jpg',
+      url: '../assets/artesanias3.jpg',
       categoryID: '1'
     },
     {
@@ -59,7 +59,7 @@ const products = [
       descriptionSimple:'Anillos y aritos varios',
       description: 'Anillos y Aritos con piedras de colores',
       precio: 500,
-      url: './assets/joyas1.jpg',
+      url: '../assets/joyas1.jpg',
       categoryID: '2'
     },
     {
@@ -68,7 +68,7 @@ const products = [
       descriptionSimple:'Color plateado',
       description: 'Combo collar, aritos y anillos de color plateado',
       precio: 1000,
-      url: './assets/joyas2.jpg',
+      url: '../assets/joyas2.jpg',
       categoryID: '2'
     },
     {
@@ -77,7 +77,7 @@ const products = [
       descriptionSimple:'Combo pulseras y anillos',
       description: 'Combo pulsera con piedra color verde agua y anillos plateados',
       precio: 1200,
-      url: './assets/joyas3.jpg',
+      url: '../assets/joyas3.jpeg',
       categoryID: '2'
     },
     {
@@ -86,7 +86,7 @@ const products = [
       descriptionSimple:'Diseño fantastico',
       description: 'Cajonera hecha a mano con diseño de fantasia, luces incluidas',
       precio: 3000,
-      url: './assets/muebles1.jpg',
+      url: '../assets/muebles1.jpg',
       categoryID: '3'
     },
     {
@@ -95,7 +95,7 @@ const products = [
       descriptionSimple:'Biblioteca minimalista',
       description: 'Biblioteca minimalista con huecos de diferentes tamaños color negro y gris',
       precio: 2000,
-      url: './assets/muebles2.jpg',
+      url: '../assets/muebles2.jpg',
       categoryID: '3'
     },
     {
@@ -104,7 +104,7 @@ const products = [
       descriptionSimple:'Mueble de madera',
       description: 'Mueble de cocina de madera con espacio para microondas',
       precio: 5000,
-      url: './assets/muebles3.jpg',
+      url: '../assets/muebles3.jpg',
       categoryID: '3'
     },
     {
@@ -113,7 +113,7 @@ const products = [
       descriptionSimple:'Antiguo',
       description: 'Portavela antiguo, diseño unico',
       precio: 600,
-      url: './assets/otro1.jpg',
+      url: '../assets/otro1.jpg',
       categoryID: '5'
     },
     {
@@ -122,7 +122,7 @@ const products = [
       descriptionSimple:'Estatua Budista',
       description: 'Estatua Budista de bronze, altura 40cm',
       precio: 1200,
-      url: './assets/otro2.jpg',
+      url: '../assets/otro2.jpg',
       categoryID: '5'
     },
     {
@@ -131,7 +131,7 @@ const products = [
       descriptionSimple:'Proyector de luces',
       description: 'Proyector de estrellas y luces de galaxia para niños',
       precio: 2200,
-      url: './assets/otro3.jpg',
+      url: '../assets/otro3.jpg',
       categoryID: '5'
     }
 ]
@@ -163,6 +163,13 @@ export const getProductById = (id) => {
         const product = products.find(prod => parseInt(prod.id) === parseInt(id))
         setTimeout(() => resolve(product), 1000)
     })
+}
+
+export const getProductsByCategoryId = (id) => {  
+  return new Promise((resolve, reject) => {
+      const productos = products.filter(prod => parseInt(prod.categoryID) === parseInt(id))
+      setTimeout(() => resolve(productos), 1000)
+  })
 }
 
 // export const getItem = () => {    

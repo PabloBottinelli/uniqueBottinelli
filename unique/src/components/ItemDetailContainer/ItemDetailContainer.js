@@ -7,10 +7,10 @@ import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = ()=> {
     const [product, setProduct] = useState([])
-    const { paramId } = useParams()
-    console.log(paramId)
+    const { id } = useParams()
+
     useEffect(() => {
-        getProductById(paramId).then(item => {
+        getProductById(id).then(item => {
             setProduct(item)
         }).catch(err  => {
             console.log(err)
@@ -20,7 +20,7 @@ const ItemDetailContainer = ()=> {
             setProduct()
         })
 
-    }, [paramId])
+    }, [id])
 
 
     return (
