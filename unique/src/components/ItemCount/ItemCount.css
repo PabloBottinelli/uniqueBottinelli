@@ -1,9 +1,10 @@
 .container{
     background-color: rgb(255, 255, 255);
     width: 400px;
-    margin: auto;
     border: 1px solid rgb(214, 214, 214);
     border-radius: 10px;
+    margin-bottom: 30px;
+    margin: auto;
 }
 h3{
     font-size: 1.2em;
@@ -50,6 +51,7 @@ span{
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
+    text-align: center;
 }
 .h4Container button{
     color: rgb(0, 140, 255);

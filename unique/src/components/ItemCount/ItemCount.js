@@ -1,22 +1,35 @@
 import { useState } from 'react'
 import './ItemCount.css'
 
-function ItemCount({stock, initial}){
-    const [count, setCount] = useState(initial);
+const ItemCount = ({onConfirm, maxQuantity}) => {
+    const [count, setCount] = useState(1)
+
+    const increment = () => {
+        if(count < maxQuantity) {
+            setCount(count + 1)
+        }
+    }
+
+    const decrement = () => {
+        if(count > 1) {
+            setCount(count - 1)
+        }
+    }
+
     return(
         <div className="container">
             <div className="h3Container">
-                <h3>Camisa Tiger</h3>
+                <h3>Cantidad</h3>
             </div>
             <div className="contador">
                 <div className="btnContainer">
-                    <button onClick={() => setCount(count - 1)} disabled={count === initial ? 'disabled' : null} >-</button>
+                    <button onClick={decrement} >-</button>
                     <span>{count}</span>
-                    <button onClick={() => setCount(count + 1)} disabled={count === stock ? 'disabled' : null}>+</button>
+                    <button onClick={increment}>+</button>
                 </div>
             </div>
             <div className="h4Container">
-                <button>Agregar al carrito</button>
+                <button onClick={() => onConfirm(count)}>Agregar al carrito</button>
             </div>
         </div>
     )

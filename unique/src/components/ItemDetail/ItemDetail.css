@@ -9,46 +9,59 @@
     margin: auto;
     font-family: 'Shippori Antique B1', sans-serif;
 }
+.imagen{
+    width: 30%;
+}
 .imagen img{
-    width: 500px;
+    width: 100%;
 }
 .detalles{
     margin-left: 20px;
-    width: 60%;
+    width: 40%;
     margin: auto;
     margin-top: 40px;
 }
 .detalles h4{
     font-size: 2.2em;
     margin-bottom: 0;
+    padding-left: 30px;
 }
 .detalles h6{
     font-size: 1em;
+    padding-left: 30px;
 }
 .detalles p{
     font-size: 1.3em;
     margin-bottom: 0;
+    padding-left: 30px;
 }
 .detalles h5{
     font-size: 2em;
     margin-bottom: 0;
+    padding-left: 30px;
 }
 .detalles span{
     font-size: 2em;
+    padding-left: 30px;
 }
 .agregar-carrito{
     background-color: rgb(0, 140, 255);
     color: white;
-    width: 300px;
-    padding: 15px;
-    border-radius: 15px;
-    cursor: pointer;
-    font-size: 1.5em;
+    display: block;
+    margin: auto;
+    width: 250px;
+    padding: 10px;
+    border-radius: 18px;
+    font-size: 1.2em;
     border: none;
-    margin-top: 80px;
-    margin-bottom: 80px;
+    margin-top: 50px;
     transition: all 500ms ease;
+    text-align: center;
 }
 .agregar-carrito:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
+}
+.botones{
+    width: 30%;
+    padding-top: 200px;
 }

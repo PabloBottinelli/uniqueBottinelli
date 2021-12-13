@@ -7,7 +7,8 @@ const products = [
       precio: 250,
       url: '../assets/3d1.jpg',
       categoryID: '4',
-      ubicacion: 'Caballito'
+      ubicacion: 'Caballito',
+      stock: '10'
     },
     {
       id:'2',
@@ -17,7 +18,8 @@ const products = [
       precio: 200,
       url: '../assets/3D2.jpg',
       categoryID: '4',
-      ubicacion: 'Belgrano'
+      ubicacion: 'Belgrano',
+      stock: '10'
     },
     {
       id:'3',
@@ -27,7 +29,8 @@ const products = [
       precio: 300,
       url: '../assets/3D3.jpg',
       categoryID: '4',
-      ubicacion: 'Palermo'
+      ubicacion: 'Palermo',
+      stock: '10'
     },
     {
       id:'4',
@@ -37,7 +40,8 @@ const products = [
       precio: 250,
       url: '../assets/artesanias1.jpg',
       categoryID: '1',
-      ubicacion: 'Flores'
+      ubicacion: 'Flores',
+      stock: '10'
     },
     {
       id:'5',
@@ -47,7 +51,8 @@ const products = [
       precio: 100,
       url: '../assets/artesanias2.jpg',
       categoryID: '1',
-      ubicacion: 'Floresta'
+      ubicacion: 'Floresta',
+      stock: '10'
     },
     {
       id:'6',
@@ -57,7 +62,8 @@ const products = [
       precio: 200,
       url: '../assets/artesanias3.jpg',
       categoryID: '1',
-      ubicacion: 'Parque Chas'
+      ubicacion: 'Parque Chas',
+      stock: '10'
     },
     {
       id:'7',
@@ -67,7 +73,8 @@ const products = [
       precio: 500,
       url: '../assets/joyas1.jpg',
       categoryID: '2',
-      ubicacion: 'Vicente Lopez'
+      ubicacion: 'Vicente Lopez',
+      stock: '10'
     },
     {
       id:'8',
@@ -77,7 +84,8 @@ const products = [
       precio: 1000,
       url: '../assets/joyas2.jpg',
       categoryID: '2',
-      ubicacion: 'Almagro'
+      ubicacion: 'Almagro',
+      stock: '10'
     },
     {
       id:'9',
@@ -87,7 +95,8 @@ const products = [
       precio: 1200,
       url: '../assets/joyas3.jpeg',
       categoryID: '2',
-      ubicacion: 'Saavedra'
+      ubicacion: 'Saavedra',
+      stock: '10'
     },
     {
       id:'10',
@@ -97,7 +106,8 @@ const products = [
       precio: 3000,
       url: '../assets/muebles1.jpg',
       categoryID: '3',
-      ubicacion: 'Caballito'
+      ubicacion: 'Caballito',
+      stock: '10'
     },
     {
       id:'11',
@@ -107,7 +117,8 @@ const products = [
       precio: 2000,
       url: '../assets/muebles2.jpg',
       categoryID: '3',
-      ubicacion: 'Parque Chacabuco'
+      ubicacion: 'Parque Chacabuco',
+      stock: '10'
     },
     {
       id:'12',
@@ -117,7 +128,8 @@ const products = [
       precio: 5000,
       url: '../assets/muebles3.jpg',
       categoryID: '3',
-      ubicacion: 'Belgrano R'
+      ubicacion: 'Belgrano R',
+      stock: '10'
     },
     {
       id:'13',
@@ -127,7 +139,8 @@ const products = [
       precio: 600,
       url: '../assets/otro1.jpg',
       categoryID: '5',
-      ubicacion: 'Recoleta'
+      ubicacion: 'Recoleta',
+      stock: '10'
     },
     {
       id:'14',
@@ -137,7 +150,8 @@ const products = [
       precio: 1200,
       url: '../assets/otro2.jpg',
       categoryID: '5',
-      ubicacion: 'Palermo'
+      ubicacion: 'Palermo',
+      stock: '10'
     },
     {
       id:'15',
@@ -147,7 +161,8 @@ const products = [
       precio: 2200,
       url: '../assets/otro3.jpg',
       categoryID: '5',
-      ubicacion: 'Almagro'
+      ubicacion: 'Almagro',
+      stock: '10'
     }
 ]
 
