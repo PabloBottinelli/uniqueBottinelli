@@ -10,6 +10,9 @@ const ItemDetail = ({ product }) => {
                 <h4>{product.name}</h4>
                 <p>{product.description}</p>
                 <h5>{product.precio}$</h5>
+                <h6>Ubicación del vendedor: {product.ubicacion}</h6>
+                <h6>Hasta 6 cuotas sin interes con tarjeta de debito</h6>
+                <button className='agregar-carrito'>Agregar al carrito</button>
             </div>
         </div>
     )

@@ -6,7 +6,8 @@ const products = [
       description: 'Figura Impresa en 3D del personaje de star wars Yoda',
       precio: 250,
       url: '../assets/3d1.jpg',
-      categoryID: '4'
+      categoryID: '4',
+      ubicacion: 'Caballito'
     },
     {
       id:'2',
@@ -15,7 +16,8 @@ const products = [
       description: 'Soporte para barbijos con forma de flecha, color rojo e impreso en 3D',
       precio: 200,
       url: '../assets/3D2.jpg',
-      categoryID: '4'
+      categoryID: '4',
+      ubicacion: 'Belgrano'
     },
     {
       id:'3',
@@ -24,7 +26,8 @@ const products = [
       description: 'Balde contenedor impreso en 3D color gris con detalles en rojo',
       precio: 300,
       url: '../assets/3D3.jpg',
-      categoryID: '4'
+      categoryID: '4',
+      ubicacion: 'Palermo'
     },
     {
       id:'4',
@@ -33,7 +36,8 @@ const products = [
       description: 'Muñecas mexicanas artesanales a pedido hechas a mano',
       precio: 250,
       url: '../assets/artesanias1.jpg',
-      categoryID: '1'
+      categoryID: '1',
+      ubicacion: 'Flores'
     },
     {
       id:'5',
@@ -42,7 +46,8 @@ const products = [
       description: 'Pulseras artesanales de colores a eleccion hechas a mano',
       precio: 100,
       url: '../assets/artesanias2.jpg',
-      categoryID: '1'
+      categoryID: '1',
+      ubicacion: 'Floresta'
     },
     {
       id:'6',
@@ -51,7 +56,8 @@ const products = [
       description: 'Macetas artesanales de todo color y tamaño, pintadas a mano',
       precio: 200,
       url: '../assets/artesanias3.jpg',
-      categoryID: '1'
+      categoryID: '1',
+      ubicacion: 'Parque Chas'
     },
     {
       id:'7',
@@ -60,7 +66,8 @@ const products = [
       description: 'Anillos y Aritos con piedras de colores',
       precio: 500,
       url: '../assets/joyas1.jpg',
-      categoryID: '2'
+      categoryID: '2',
+      ubicacion: 'Vicente Lopez'
     },
     {
       id:'8',
@@ -69,7 +76,8 @@ const products = [
       description: 'Combo collar, aritos y anillos de color plateado',
       precio: 1000,
       url: '../assets/joyas2.jpg',
-      categoryID: '2'
+      categoryID: '2',
+      ubicacion: 'Almagro'
     },
     {
       id:'9',
@@ -78,7 +86,8 @@ const products = [
       description: 'Combo pulsera con piedra color verde agua y anillos plateados',
       precio: 1200,
       url: '../assets/joyas3.jpeg',
-      categoryID: '2'
+      categoryID: '2',
+      ubicacion: 'Saavedra'
     },
     {
       id:'10',
@@ -87,7 +96,8 @@ const products = [
       description: 'Cajonera hecha a mano con diseño de fantasia, luces incluidas',
       precio: 3000,
       url: '../assets/muebles1.jpg',
-      categoryID: '3'
+      categoryID: '3',
+      ubicacion: 'Caballito'
     },
     {
       id:'11',
@@ -96,7 +106,8 @@ const products = [
       description: 'Biblioteca minimalista con huecos de diferentes tamaños color negro y gris',
       precio: 2000,
       url: '../assets/muebles2.jpg',
-      categoryID: '3'
+      categoryID: '3',
+      ubicacion: 'Parque Chacabuco'
     },
     {
       id:'12',
@@ -105,7 +116,8 @@ const products = [
       description: 'Mueble de cocina de madera con espacio para microondas',
       precio: 5000,
       url: '../assets/muebles3.jpg',
-      categoryID: '3'
+      categoryID: '3',
+      ubicacion: 'Belgrano R'
     },
     {
       id:'13',
@@ -114,7 +126,8 @@ const products = [
       description: 'Portavela antiguo, diseño unico',
       precio: 600,
       url: '../assets/otro1.jpg',
-      categoryID: '5'
+      categoryID: '5',
+      ubicacion: 'Recoleta'
     },
     {
       id:'14',
@@ -123,7 +136,8 @@ const products = [
       description: 'Estatua Budista de bronze, altura 40cm',
       precio: 1200,
       url: '../assets/otro2.jpg',
-      categoryID: '5'
+      categoryID: '5',
+      ubicacion: 'Palermo'
     },
     {
       id:'15',
@@ -132,7 +146,8 @@ const products = [
       description: 'Proyector de estrellas y luces de galaxia para niños',
       precio: 2200,
       url: '../assets/otro3.jpg',
-      categoryID: '5'
+      categoryID: '5',
+      ubicacion: 'Almagro'
     }
 ]
 
@@ -167,8 +182,10 @@ export const getProductById = (id) => {
 
 export const getProductsByCategoryId = (id) => {  
   return new Promise((resolve, reject) => {
-      const productos = products.filter(prod => parseInt(prod.categoryID) === parseInt(id))
-      setTimeout(() => resolve(productos), 1000)
+    const productos = products.filter(function(prod){
+      return parseInt(id) === parseInt(prod.categoryID);
+    })
+    setTimeout(() => resolve(productos), 1000)
   })
 }
 
