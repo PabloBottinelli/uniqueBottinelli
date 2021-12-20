@@ -1,14 +1,17 @@
 import './ItemDetail.css'
 import { Link } from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import CartContext from '../../context/CartContext'
 
 const ItemDetail = ({ product }) => {
     const [onAdd, setCount] = useState()
 
-    const addToCart = (count) => {
+    const { setCart } = useContext(CartContext) 
+
+    const addToCart = (count, product) => {
         setCount(count)
-        console.log(onAdd)
+        setCart(count, product)
     }
 
     return (
@@ -24,7 +27,7 @@ const ItemDetail = ({ product }) => {
                 <h6>Hasta 6 cuotas sin interes con tarjeta de debito</h6>
             </div>
             <div className='botones'>
-                {onAdd ? undefined : <ItemCount onConfirm={addToCart} maxQuantity={product.stock}/>}
+                {onAdd ? undefined : <ItemCount onConfirm={addToCart} maxQuantity={product.stock} product={product}/>}
                 <Link to={'/cart'} className='agregar-carrito'>Terminar Compra</Link>
             </div>
         </div>
