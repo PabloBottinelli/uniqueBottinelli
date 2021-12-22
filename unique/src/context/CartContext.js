@@ -54,7 +54,7 @@ export const CartContextProvider = ({children}) => {
         setCount(cuenta)
     }
 
-    const clear = () => {
+    const Clear = () => {
         setProducts([])
         setProductQuantity([])
         setCount(0)
@@ -65,8 +65,11 @@ export const CartContextProvider = ({children}) => {
             cart: {
                 count,
                 product,
+                productQuantity
             },
-            setCart
+            setCart,
+            removeItem,
+            Clear
         }}>
             {children}
         </Context.Provider>
