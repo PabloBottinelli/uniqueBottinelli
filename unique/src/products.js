@@ -166,20 +166,6 @@ const products = [
     }
 ]
 
-// const categories = [
-//     {id:'celular',description:'Celular'},
-//     {id:'tablet',description:'Tablet'},
-//     {id:'notebook',description:'Notebook'}
-// ]
-
-// export const getCategories = () => {    
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             resolve(categories)
-//         }, 5000)        
-//     })
-// }
-
 export const getProducts = () => {    
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -203,11 +189,3 @@ export const getProductsByCategoryId = (id) => {
     setTimeout(() => resolve(productos), 1000)
   })
 }
-
-// export const getItem = () => {    
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             resolve(products[0])
-//         }, 3000)        
-//     })
-// }

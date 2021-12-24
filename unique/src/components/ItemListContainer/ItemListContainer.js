@@ -5,39 +5,55 @@ import './ItemListContainer.css'
 import { getProducts } from '../../products'
 import { getProductsByCategoryId } from '../../products'
 import { useParams } from 'react-router-dom'
+import { db } from '../../service/firebase/firebase'
+import { collection, getDocs, query, where } from 'firebase/firestore' 
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
   const { id } = useParams()
+
   useEffect(() => {
+    setLoading(true)
     if(id){
-      const list = getProductsByCategoryId(id)
-      list.then(item => {
-        setProducts(item)
-      }).catch(err  => {
-        console.log(err)
-      })
-      return (() => {
-        setProducts([])
+      setLoading(true)
+      getDocs(query(collection(db, 'items'), where('categoryID', '==', id))).then((querySnapshot) => {
+        console.log(querySnapshot)
+        const products = querySnapshot.docs.map(doc => {
+          console.log(doc)
+          return { id: doc.id, ...doc.data() }
+        })
+        setProducts(products)
+      }).catch((error) => {
+        console.log('Error searching items', error)
+      }).finally(() => {
+        setLoading(false)
       })
     }else{
-      const list = getProducts()
-      list.then(item => {
-        setProducts(item)
-      }).catch(err  => {
-        console.log(err)
-      })
-      return (() => {
-        setProducts([])
+      getDocs(collection(db, 'items')).then((querySnapshot) => {
+        console.log(querySnapshot)
+        const products = querySnapshot.docs.map(doc => {
+          console.log(doc)
+          return { id: doc.id, ...doc.data() }
+        })
+        setProducts(products)
+      }).catch((error) => {
+        console.log('Error searching items', error)
+      }).finally(() => {
+        setLoading(false)
       })
     }
   }, [id])
 
-    return(
-      <div>
-        <ItemList items={products}/>
-      </div>
-    )    
+  if(loading){
+    return <div className="loader"></div>
+  }
+
+  return(
+    <div>
+      <ItemList items={products}/>
+    </div>
+  )    
 }
 
 export default ItemListContainer
