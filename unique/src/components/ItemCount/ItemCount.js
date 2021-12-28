@@ -23,13 +23,13 @@ const ItemCount = ({onConfirm, maxQuantity, product}) => {
             </div>
             <div className="contador">
                 <div className="btnContainer">
-                    <button onClick={decrement} >-</button>
-                    <span>{count}</span>
+                    <button onClick={decrement}>-</button>
+                    {maxQuantity === 0 ? <span>0</span> : <span>{count}</span>}
                     <button onClick={increment}>+</button>
                 </div>
             </div>
             <div className="h4Container">
-                <button onClick={() => onConfirm(count, product)}>Agregar al carrito</button>
+                {maxQuantity === 0 ? <button className='nostock'>No hay stock!</button> : <button className='stock' onClick={() => onConfirm(count, product)}>Agregar al carrito</button>}
             </div>
         </div>
     )

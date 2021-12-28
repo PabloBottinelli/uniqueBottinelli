@@ -5,7 +5,6 @@ const Context = React.createContext()
 export const CartContextProvider = ({children}) => {
     const [count, setCount] = useState(0)
     const [product, setProducts] = useState([])
-    const [productQuantity, setProductQuantity] = useState([])
 
     const contador = count
     const producto = product
@@ -14,49 +13,37 @@ export const CartContextProvider = ({children}) => {
         const isInCart = (id) => {
             const filtro = producto.filter((product) => product.id == id)
             if(filtro.length == 0){
-                const newQuantity = {
-                    id: product.id,
-                    quantity: count
-                }
-                setProductQuantity([...productQuantity, newQuantity])
+                product.quantity = count    
+                console.log(product.quantity)
+
                 setCount(count + contador)
                 setProducts([...producto, product])
             }else{
                 const actualizarQuantity = (id) => {
-                    const encontrar = productQuantity.filter((product) => product.id == id)
-                    const cuenta = encontrar[0].quantity + count
+                    setCount(contador - filtro[0].quantity + count)
+                    product.quantity = count
                     const eliminarQuantity = (id) => {
-                        const sinElProducto = productQuantity.filter((product) => product.id !== id)
-                        const newQuantity = {
-                            id: filtro[0].id,
-                            quantity: cuenta
-                        }
-                        setProductQuantity([...sinElProducto, newQuantity])
+                        const sinElProducto = producto.filter((p) => p.id !== id)
+                        setProducts([...sinElProducto, product])
                     }
                     eliminarQuantity(filtro[0].id)
                 }               
                 actualizarQuantity(filtro[0].id)
-                setCount(count + contador)
             }
         }
         isInCart(product.id)
     }
-    // console.log(product)
-    // console.log(productQuantity)
 
     const removeItem = (id) => {
         const filtro = producto.filter((product) => product.id !== id)
-        const encontrar = productQuantity.filter((product) => product.id == id)
-        const eliminarQuantity = productQuantity.filter((product) => product.id !== id)
-        const cuenta = count - encontrar[0].quantity
+        const productoAEliminar = producto.filter((product) => product.id == id)
+        const cuenta = count - productoAEliminar[0].quantity
         setProducts(filtro)
-        setProductQuantity(eliminarQuantity)
         setCount(cuenta)
     }
 
     const Clear = () => {
         setProducts([])
-        setProductQuantity([])
         setCount(0)
     }
 
@@ -64,8 +51,7 @@ export const CartContextProvider = ({children}) => {
         <Context.Provider value={{
             cart: {
                 count,
-                product,
-                productQuantity
+                product
             },
             setCart,
             removeItem,
