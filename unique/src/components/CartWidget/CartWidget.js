@@ -8,7 +8,7 @@ const CartWidget = () => {
 
     return(
         <div>
-            {cart.count === 0 ? undefined : <Link to={'/cart'} className='carrito'><img src='../assets/shopping-cart.svg'></img><span>{cart.count}</span></Link>}
+            {cart.count === 0 ? undefined : <Link to={'/cart'} className='carrito'><img src='../assets/shopping-cart.svg' alt='shopping-cart'></img><span>{cart.count}</span></Link>}
         </div>
     )
 }

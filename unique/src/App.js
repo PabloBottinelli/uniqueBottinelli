@@ -1,7 +1,6 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import Cart from './components/Cart/Cart';
-import ConfirmOrder from './components/ConfirmOrder/ConfirmOrder';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import React from 'react';
@@ -19,7 +18,6 @@ function App() {
             <Route path='/category/:id' element={<ItemListContainer/>}/>
             <Route path='/detail/:paramId' element={<ItemDetailContainer/>}/>
             <Route path='/cart' element={<Cart/>}/>
-            <Route path='/confirmOrder' element={<ConfirmOrder/>}/>
           </Routes>
         </BrowserRouter>
       </CartContextProvider>

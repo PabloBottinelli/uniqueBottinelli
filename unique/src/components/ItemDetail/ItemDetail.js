@@ -7,7 +7,10 @@ import CartContext from '../../context/CartContext'
 const ItemDetail = ({ product }) => {
     const [onAdd, setCount] = useState()
 
-    const { setCart } = useContext(CartContext) 
+    const { setCart, cart } = useContext(CartContext) 
+
+    const filtro = cart.product.filter((p) => p.id === product.id)
+    console.log(filtro)
 
     const addToCart = (count, product) => {
         setCount(count)
@@ -17,7 +20,7 @@ const ItemDetail = ({ product }) => {
     return (
         <div key={product.id} className="itemDetail-ctn">
             <div className='imagen'>
-                <img src={product.url}></img>
+                <img src={product.url} alt='imagen-item'></img>
             </div>
             <div className='detalles'>
                 <h4>{product.name}</h4>
@@ -27,7 +30,11 @@ const ItemDetail = ({ product }) => {
                 <h6>Hasta 6 cuotas sin interes con tarjeta de debito</h6>
             </div>
             <div className='botones'>
-                {onAdd ? undefined : <ItemCount onConfirm={addToCart} maxQuantity={product.stock} product={product}/>}
+                {onAdd ? undefined : 
+                    filtro.length === 0 ? 
+                    <ItemCount onConfirm={addToCart} maxQuantity={product.stock} product={product} valorCount={1}/> : 
+                    <ItemCount onConfirm={addToCart} maxQuantity={product.stock} product={product} valorCount={filtro[0].quantity}/>
+                }
                 <Link to={'/cart'} className='agregar-carrito'>Terminar Compra</Link>
             </div>
         </div>

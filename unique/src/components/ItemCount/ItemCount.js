@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './ItemCount.css'
 
-const ItemCount = ({onConfirm, maxQuantity, product}) => {
-    const [count, setCount] = useState(1)
+const ItemCount = ({onConfirm, maxQuantity, product, valorCount}) => {
+    const [count, setCount] = useState(valorCount)
 
     const increment = () => {
         if(count < maxQuantity) {

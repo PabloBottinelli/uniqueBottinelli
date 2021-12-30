@@ -11,11 +11,9 @@ export const CartContextProvider = ({children}) => {
 
     const setCart = (count, product) => {
         const isInCart = (id) => {
-            const filtro = producto.filter((product) => product.id == id)
-            if(filtro.length == 0){
+            const filtro = producto.filter((product) => product.id === id)
+            if(filtro.length === 0){
                 product.quantity = count    
-                console.log(product.quantity)
-
                 setCount(count + contador)
                 setProducts([...producto, product])
             }else{
@@ -36,7 +34,7 @@ export const CartContextProvider = ({children}) => {
 
     const removeItem = (id) => {
         const filtro = producto.filter((product) => product.id !== id)
-        const productoAEliminar = producto.filter((product) => product.id == id)
+        const productoAEliminar = producto.filter((product) => product.id === id)
         const cuenta = count - productoAEliminar[0].quantity
         setProducts(filtro)
         setCount(cuenta)

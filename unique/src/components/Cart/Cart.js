@@ -8,13 +8,13 @@ import { db } from '../../service/firebase/firebase'
 import { useState } from 'react'
 
 const Cart = () => {
-    const { cart, setCart, Clear } = useContext(CartContext)
+    const { cart, Clear } = useContext(CartContext)
     const [processingOrder, setProcessingOrder] = useState(true)
     const [orderId, setOrderId] = useState()
 
     const getQuantity = (id) => {
         const cantidades = cart.product
-        const cantidad = cantidades.filter((product) => product.id == id)
+        const cantidad = cantidades.filter((product) => product.id === id)
         return cantidad[0].quantity
     }
 

@@ -2,7 +2,7 @@ import './NavBar.css';
 import CartWidget from '../CartWidget/CartWidget';
 import {Link} from 'react-router-dom';
 import { db } from '../../service/firebase/firebase'
-import { collection, getDocs, query, where } from 'firebase/firestore' 
+import { collection, getDocs } from 'firebase/firestore' 
 import { useState, useEffect } from 'react'
 
 const NavBar = () => {

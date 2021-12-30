@@ -21,7 +21,7 @@ const CartItem = ({ item, quantity }) => {
     }
     return (
         <tr key={item.id}>
-            <td><img src={item.url}></img></td>
+            <td><img src={item.url} alt='item'></img></td>
             <td>{item.name}</td>
             <td>{item.precio}$</td>
             <td>
