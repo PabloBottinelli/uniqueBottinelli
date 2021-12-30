@@ -10,7 +10,6 @@ const ItemDetail = ({ product }) => {
     const { setCart, cart } = useContext(CartContext) 
 
     const filtro = cart.product.filter((p) => p.id === product.id)
-    console.log(filtro)
 
     const addToCart = (count, product) => {
         setCount(count)
