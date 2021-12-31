@@ -3,9 +3,9 @@ Una tienda online donde las cosas que se venden son unicas
 Presenta 5 categorias, 3D (cosas impresas en 3d), Joyas, Muebles, Artesanias y otros.
 No presenta dependencias externas ademas de las trabajadas en clase
 
-Para instalarlo debes ejecutar el comando 
-$ npm i 
-desde la carpeta unique
+Para instalarlo debes ejecutar los comandos
+$ cd unique 
+$ npm i
 
 Tambien debes configurar tus credenciales de firestore creando un archivo .env como se muestra en el archivo de ejemplo .env.example
 
